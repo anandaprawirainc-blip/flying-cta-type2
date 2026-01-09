@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Hero() {
@@ -9,10 +10,13 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video Placeholder */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <Image 
           src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/32f043f4-bf60-42af-aba1-aa6f7428bdeb.png"
           alt="Modern digital marketing office with team collaboration and technology screens"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-blue-900/70"></div>
       </div>
@@ -45,26 +49,42 @@ export default function Hero() {
           <div className="text-blue-200 mb-8">
             <p className="text-lg mb-6">{t('hero.trustText')}</p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-80">
-              <img 
-                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4784c209-143d-4c52-9735-99180d57cff6.png" 
-                alt="Client logo 1"
-                className="h-12 object-contain filter brightness-0 invert"
-              />
-              <img 
-                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cff136aa-9f44-41c3-a768-c2f2fdd8ef5a.png" 
-                alt="Client logo 2"
-                className="h-12 object-contain filter brightness-0 invert"
-              />
-              <img 
-                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/75a6c480-d33d-4547-acf9-1ab05a4a2020.png" 
-                alt="Client logo 3"
-                className="h-12 object-contain filter brightness-0 invert"
-              />
-              <img 
-                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5d40065b-9f7f-42b2-b648-97f08ea423f3.png" 
-                alt="Client logo 4"
-                className="h-12 object-contain filter brightness-0 invert"
-              />
+              <div className="relative h-12 w-24">
+                <Image 
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4784c209-143d-4c52-9735-99180d57cff6.png" 
+                  alt="Client logo 1"
+                  fill
+                  className="object-contain filter brightness-0 invert"
+                  sizes="96px"
+                />
+              </div>
+              <div className="relative h-12 w-24">
+                <Image 
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cff136aa-9f44-41c3-a768-c2f2fdd8ef5a.png" 
+                  alt="Client logo 2"
+                  fill
+                  className="object-contain filter brightness-0 invert"
+                  sizes="96px"
+                />
+              </div>
+              <div className="relative h-12 w-24">
+                <Image 
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/75a6c480-d33d-4547-acf9-1ab05a4a2020.png" 
+                  alt="Client logo 3"
+                  fill
+                  className="object-contain filter brightness-0 invert"
+                  sizes="96px"
+                />
+              </div>
+              <div className="relative h-12 w-24">
+                <Image 
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5d40065b-9f7f-42b2-b648-97f08ea423f3.png" 
+                  alt="Client logo 4"
+                  fill
+                  className="object-contain filter brightness-0 invert"
+                  sizes="96px"
+                />
+              </div>
             </div>
           </div>
         </div>

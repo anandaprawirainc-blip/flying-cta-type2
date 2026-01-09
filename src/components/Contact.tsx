@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
@@ -153,11 +154,13 @@ export default function Contact() {
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-gray-200 h-64 rounded-2xl flex items-center justify-center">
-              <img 
+            <div className="bg-gray-200 h-64 rounded-2xl flex items-center justify-center relative overflow-hidden">
+              <Image 
                 src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4a496b36-62f9-4e54-8c92-59ef290e8ef5.png"
                 alt="Interactive office location map with contact details"
-                className="w-full h-full object-cover rounded-2xl"
+                fill
+                className="object-cover rounded-2xl"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
 
