@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Services() {
@@ -53,11 +54,15 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div key={service.key} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <img 
-                src={service.image}
-                alt={service.alt}
-                className="w-full h-48 object-cover rounded-lg mb-6"
-              />
+              <div className="relative w-full h-48 mb-6">
+                <Image 
+                  src={service.image}
+                  alt={service.alt}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {t(`services.${service.key}.title`)}
               </h3>

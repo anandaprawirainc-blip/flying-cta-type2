@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function About() {
@@ -62,11 +63,15 @@ export default function About() {
 
           {/* Right Image */}
           <div className="relative">
-            <img 
-              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/09fc9041-5ccb-4059-afc2-56fc5957f940.png"
-              alt="Professional digital marketing team working together in modern office"
-              className="w-full h-auto rounded-2xl shadow-2xl"
-            />
+            <div className="relative w-full h-96">
+              <Image 
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/09fc9041-5ccb-4059-afc2-56fc5957f940.png"
+                alt="Professional digital marketing team working together in modern office"
+                fill
+                className="object-cover rounded-2xl shadow-2xl"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             
             {/* Floating Card */}
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100">
